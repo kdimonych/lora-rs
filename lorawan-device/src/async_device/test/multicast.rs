@@ -3,8 +3,8 @@ use crate::async_device::McAddr;
 use lorawan::creator::DataPayloadCreator;
 use lorawan::keys::{McKEKey, McKey};
 use lorawan::multicast::{
-    parse_uplink_multicast_messages, McGroupDeleteReqCreator, McGroupSetupReqCreator,
-    UplinkRemoteSetup,
+    McGroupDeleteReqCreator, McGroupSetupReqCreator, UplinkRemoteSetup,
+    parse_uplink_multicast_messages,
 };
 use lorawan::parser::{DataHeader, DataPayload, FRMPayload, PhyPayload};
 
@@ -105,7 +105,7 @@ async fn test_multicast_remote_setup() {
     match response {
         Ok(ListenResponse::Multicast(MulticastResponse::NewSession { group_id })) => {
             assert_eq!(group_id, 1); // Group ID from the setup request
-                                     // Verify the session was created correctly
+            // Verify the session was created correctly
             let mc_addr = McAddr::from([52, 110, 29, 60]);
             let (fetched_group_id, stored_session) = device
                 .mac

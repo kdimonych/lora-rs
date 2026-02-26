@@ -21,12 +21,12 @@
 //! }
 //! ```
 
-use super::keys::{AppKey, AppSKey, CryptoFactory, Encrypter, NwkSKey, AES128, MIC};
+use super::keys::{AES128, AppKey, AppSKey, CryptoFactory, Encrypter, MIC, NwkSKey};
 use crate::types::{ChannelMask, DLSettings, Frequency};
 
 use super::securityhelpers;
 
-use super::packet_length::phy::{join::*, mac::FPORT_LEN, MHDR_LEN, MIC_LEN, PHY_PAYLOAD_MIN_LEN};
+use super::packet_length::phy::{MHDR_LEN, MIC_LEN, PHY_PAYLOAD_MIN_LEN, join::*, mac::FPORT_LEN};
 
 #[derive(Debug, PartialEq)]
 #[cfg_attr(feature = "defmt-03", derive(defmt::Format))]

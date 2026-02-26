@@ -1,6 +1,6 @@
+use crate::Downlink;
 use crate::mac::FcntDown;
 use crate::radio::RadioBuffer;
-use crate::Downlink;
 use crate::{async_device, mac};
 use core::fmt::Debug;
 use core::ops::RangeInclusive;
@@ -8,8 +8,8 @@ use lorawan::default_crypto::DefaultFactory;
 use lorawan::keys::McKEKey;
 pub use lorawan::multicast::{self, Session};
 use lorawan::multicast::{
-    parse_downlink_multicast_messages, DownlinkRemoteSetup, McGroupDeleteAnsCreator,
-    McGroupSetupAnsCreator, McGroupStatusAnsCreator, PackageVersionAnsCreator,
+    DownlinkRemoteSetup, McGroupDeleteAnsCreator, McGroupSetupAnsCreator, McGroupStatusAnsCreator,
+    PackageVersionAnsCreator, parse_downlink_multicast_messages,
 };
 use lorawan::parser::FRMPayload;
 pub use lorawan::parser::McAddr;

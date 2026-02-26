@@ -8,7 +8,7 @@ use lorawan::{
     default_crypto::DefaultFactory,
     maccommandcreator::LinkADRReqCreator,
     maccommands::LinkADRReqPayload,
-    parser::{parse, DataPayload, JoinAcceptPayload, PhyPayload},
+    parser::{DataPayload, JoinAcceptPayload, PhyPayload, parse},
 };
 use mac::Session;
 
@@ -225,7 +225,9 @@ pub fn handle_data_uplink_with_link_adr_ans(
                 phy.build(&[], [], &get_key().into(), &get_key().into(), &DefaultFactory).unwrap();
             finished.len()
         } else {
-            panic!("Unable to parse PhyPayload::Data from uplink in handle_data_uplink_with_link_adr_ans")
+            panic!(
+                "Unable to parse PhyPayload::Data from uplink in handle_data_uplink_with_link_adr_ans"
+            )
         }
     } else {
         panic!("No uplink passed to handle_data_uplink_with_link_adr_ans")

@@ -7,9 +7,9 @@
 // author: Ivaylo Petrov <ivajloip@gmail.com>
 
 use crate::CryptoFactory;
-use aes::cipher::{generic_array::GenericArray, KeyInit};
 use aes::Aes128;
-use criterion::{criterion_group, criterion_main, Criterion};
+use aes::cipher::{KeyInit, generic_array::GenericArray};
+use criterion::{Criterion, criterion_group, criterion_main};
 use lorawan::maccommands::{DownlinkMacCommand, MacCommandIterator};
 use std::alloc::System;
 use std::sync::atomic::{AtomicUsize, Ordering};

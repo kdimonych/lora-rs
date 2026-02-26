@@ -3,8 +3,9 @@
 //! decrypting from send and receive buffers.
 
 use crate::{
+    AppSKey, Downlink, NwkSKey,
     radio::{self, RadioBuffer, RfConfig, RxConfig, RxMode},
-    region, AppSKey, Downlink, NwkSKey,
+    region,
 };
 use heapless::Vec;
 use lora_modulation::BaseBandModulationParams;

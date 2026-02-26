@@ -1,6 +1,6 @@
 use crate::maccommands::Error;
 use crate::multicast::{
-    McGroupStatusAnsPayload, McGroupStatusReqCreator, McGroupStatusReqPayload, MAX_GROUPS,
+    MAX_GROUPS, McGroupStatusAnsPayload, McGroupStatusReqCreator, McGroupStatusReqPayload,
 };
 use crate::parser::McAddr;
 
@@ -165,8 +165,8 @@ impl McGroupStatusReqPayload<'_> {
 mod test {
     use super::*;
     use crate::multicast::{
-        parse_downlink_multicast_messages, parse_uplink_multicast_messages, DownlinkRemoteSetup,
-        UplinkRemoteSetup,
+        DownlinkRemoteSetup, UplinkRemoteSetup, parse_downlink_multicast_messages,
+        parse_uplink_multicast_messages,
     };
     #[test]
     fn roundtrip_one_group() {

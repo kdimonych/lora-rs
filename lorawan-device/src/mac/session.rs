@@ -1,9 +1,10 @@
 use super::{
+    FcntUp, Response, SendData,
     otaa::{DevNonce, NetworkCredentials},
-    uplink, FcntUp, Response, SendData,
+    uplink,
 };
 use crate::radio::RadioBuffer;
-use crate::{region, AppSKey, Downlink, NwkSKey};
+use crate::{AppSKey, Downlink, NwkSKey, region};
 use heapless::Vec;
 use lorawan::maccommandcreator::{
     DevStatusAnsCreator, DlChannelAnsCreator, LinkADRAnsCreator, NewChannelAnsCreator,
@@ -220,10 +221,10 @@ impl Session {
                                     self.override_adr = adr;
                                 }
                                 DutJoinReq => {
-                                    return Response::DeviceHandler(DeviceEvent::ResetMac)
+                                    return Response::DeviceHandler(DeviceEvent::ResetMac);
                                 }
                                 DutResetReq => {
-                                    return Response::DeviceHandler(DeviceEvent::ResetDevice)
+                                    return Response::DeviceHandler(DeviceEvent::ResetDevice);
                                 }
                                 LinkCheckReq => {
                                     return Response::LinkCheckReq;
@@ -237,7 +238,7 @@ impl Session {
                                 TxPeriodicityChange(periodicity) => {
                                     return Response::DeviceHandler(
                                         DeviceEvent::TxPeriodicityChange { periodicity },
-                                    )
+                                    );
                                 }
                                 UplinkPrepared => return Response::UplinkPrepared,
                                 NoUpdate => return Response::NoUpdate,

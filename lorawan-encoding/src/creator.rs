@@ -1,8 +1,8 @@
 //! Provides types and methods for creating LoRaWAN payloads.
 //!
 //! See [JoinAcceptCreator.new](struct.JoinAcceptCreator.html#method.new) for an example.
-use super::keys::{AppKey, AppSKey, CryptoFactory, Decrypter, NwkSKey, AES128};
-use super::maccommands::{mac_commands_len, SerializableMacCommand};
+use super::keys::{AES128, AppKey, AppSKey, CryptoFactory, Decrypter, NwkSKey};
+use super::maccommands::{SerializableMacCommand, mac_commands_len};
 use super::parser;
 use super::securityhelpers;
 use crate::packet_length::phy::join::{

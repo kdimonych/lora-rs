@@ -1,4 +1,4 @@
-use lorawan::maccommands::{parse_uplink_mac_commands, SerializableMacCommand, UplinkMacCommand};
+use lorawan::maccommands::{SerializableMacCommand, UplinkMacCommand, parse_uplink_mac_commands};
 use lorawan::packet_length::phy::mac::fhdr::FOPTS_MAX_LEN;
 
 #[cfg(feature = "serde")]
@@ -66,7 +66,7 @@ impl defmt::Format for Uplink {
 #[cfg(test)]
 mod test {
     use super::*;
-    use lorawan::maccommands::{parse_uplink_mac_commands, LinkADRAnsCreator, UplinkMacCommand};
+    use lorawan::maccommands::{LinkADRAnsCreator, UplinkMacCommand, parse_uplink_mac_commands};
     #[test]
     fn two_link_adr_ans() {
         let mut uplink = Uplink::default();

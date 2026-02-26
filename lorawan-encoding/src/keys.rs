@@ -1,6 +1,6 @@
 //! Implement types for dealing with LoRaWAN keys and required
 //! cryptography entities.
-use super::parser::{McAddr, EUI64};
+use super::parser::{EUI64, McAddr};
 
 macro_rules! lorawan_key {
     (

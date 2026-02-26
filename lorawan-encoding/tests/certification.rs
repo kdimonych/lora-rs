@@ -1,5 +1,5 @@
-use lorawan::certification::parse_downlink_certification_messages;
 use lorawan::certification::DownlinkDUTCommand::*;
+use lorawan::certification::parse_downlink_certification_messages;
 use lorawan::certification::*;
 
 #[test]

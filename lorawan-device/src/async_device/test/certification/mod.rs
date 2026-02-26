@@ -3,7 +3,7 @@
 use super::util;
 use crate::async_device::SendResponse;
 use crate::radio::RfConfig;
-use crate::test_util::{get_key, Uplink};
+use crate::test_util::{Uplink, get_key};
 use lorawan::creator::DataPayloadCreator;
 use lorawan::default_crypto::DefaultFactory;
 use lorawan::parser::{DecryptedDataPayload, EncryptedDataPayload};

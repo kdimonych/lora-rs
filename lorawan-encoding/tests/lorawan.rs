@@ -4,7 +4,7 @@ use lorawan::keys::*;
 use lorawan::maccommandcreator::*;
 use lorawan::maccommands::*;
 use lorawan::parser::*;
-use lorawan::types::{DLSettings, Frequency, DR};
+use lorawan::types::{DLSettings, DR, Frequency};
 
 fn phy_join_request_payload() -> Vec<u8> {
     let mut res = Vec::new();
@@ -566,9 +566,9 @@ fn test_data_payload_creator_when_encrypt_but_not_fport_0() {
     let mut cmds_buf = [0u8; 256];
     let cmds_buf_len = build_mac_commands(&cmds, &mut cmds_buf).unwrap();
     phy.set_f_port(1);
-    assert!(phy
-        .build(b"", &cmds_buf[..cmds_buf_len], &nwk_skey, &app_skey, &DefaultFactory)
-        .is_err());
+    assert!(
+        phy.build(b"", &cmds_buf[..cmds_buf_len], &nwk_skey, &app_skey, &DefaultFactory).is_err()
+    );
 }
 
 #[test]

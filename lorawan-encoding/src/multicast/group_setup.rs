@@ -182,7 +182,7 @@ impl McGroupSetupReqCreator {
 mod tests {
     use super::*;
     use crate::default_crypto::DefaultFactory;
-    use crate::multicast::{parse_downlink_multicast_messages, DownlinkRemoteSetup};
+    use crate::multicast::{DownlinkRemoteSetup, parse_downlink_multicast_messages};
 
     #[test]
     fn roundtrip() {
