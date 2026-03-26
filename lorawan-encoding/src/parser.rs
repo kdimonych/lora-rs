@@ -1178,7 +1178,6 @@ impl<'a> FRMMacCommands<'a> {
         self.1
     }
 
-    // /// Gives the list of mac commands represented in the FRMPayload.
     // pub fn mac_commands(&self) -> MacCommandIterator {
     //     parse_mac_commands(self.1, self.0)
     // }
